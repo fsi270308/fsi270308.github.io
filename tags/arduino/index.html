@@ -1,10 +1,10 @@
 
- <!DOCTYPE HTML>
+  <!DOCTYPE HTML>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   
-    <title>tags | 苞米造</title>
+    <title>标签 : arduino | 苞米造</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="马峰">
@@ -13,14 +13,13 @@
     
     <meta name="description" content="Pony Mini Workshop">
 <meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta property="og:title" content="苞米造">
+<meta property="og:url" content="http://yoursite.com/tags/arduino/index.html">
 <meta property="og:site_name" content="苞米造">
 <meta property="og:description" content="Pony Mini Workshop">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-01-22T05:10:58.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
+<meta name="twitter:title" content="苞米造">
 <meta name="twitter:description" content="Pony Mini Workshop">
 
     
@@ -75,23 +74,31 @@
 </div>
       </header>
       <div id="container">
-          
+        
+
 <div class="archive-title" >
-<h2 class="tag-icon">标签</h2>
-
-<a data-src="/tags/arduino/" href="#arduino" title="arduino">arduino<sup>1</sup></a>
-
-<a data-src="/tags/blog/" href="#blog" title="blog">blog<sup>1</sup></a>
-
-<a data-src="/tags/openCV/" href="#openCV" title="openCV">openCV<sup>1</sup></a>
-
+  <h2 class="tag-icon">arduino</h2>
+  
 </div>
-<div id="main" class="archive-part">
-<div class="all-list-box"></div>
+<div id="main" class="archive-part clearfix">
+  <div id="archive-page">
+
+  <section class="post" itemscope itemprop="blogPost">
+   
+    <a href="https://shimo.im/doc/3LHB23glZ5c33xY3/" target="_blank"> 
+  
+
+    <time datetime="2018-02-04T06:23:14.000Z" itemprop="datePublished">2018-02-04</time>
+
+
+    <h1 itemprop="name">arduino笔记</h1>
+
+  </a>
+</section>
+
+
+  </div>
 </div>
-
-
-
 
       </div>
       <footer><div id="footer" >
@@ -192,24 +199,6 @@ $(document).ready(function(){
 
 
 
-
-<script type="text/javascript">
-$(document).ready(function(){ 
-  var list    = $('.archive-title a'),
-      box     = $('.all-list-box'),
-      first   = $('.archive-title a:first-of-type');
-      box.load(first.attr('data-src').toString()+' #archive-page');
-      first.addClass('current');
-  list.each(function(){
-    $(this).click(function(){
-      var listSrc=$(this).attr('data-src').toString()+' #archive-page';
-      box.load(listSrc);
-      list.removeClass('current');
-      $(this).addClass('current');
-     });  
-    });
-  }); 
-</script>
 
 
 <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
