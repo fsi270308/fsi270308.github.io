@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>openCV笔记（一） | 苞米造</title>
+    <title>openCV笔记（一） | BOMIZO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
-    <meta name="author" content="马峰">
+    <meta name="author" content="Maf">
     
 
     
@@ -15,17 +15,17 @@
 <meta name="keywords" content="openCV">
 <meta property="og:type" content="article">
 <meta property="og:title" content="openCV笔记（一）">
-<meta property="og:url" content="http://yoursite.com/2018/02/28/openCV笔记/index.html">
-<meta property="og:site_name" content="苞米造">
+<meta property="og:url" content="http://www.bomizo.ml/2018/02/28/openCV笔记/index.html">
+<meta property="og:site_name" content="BOMIZO">
 <meta property="og:description" content="图像读取、显示及保存使用工具Python3.6库numpy；opencv注意点：  读取的文件名不能是汉字，否则无法读出 指定文件位置时，应用‘\\’,而不是‘\’">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-02-28T08:13:37.000Z">
+<meta property="og:updated_time" content="2018-03-09T08:01:17.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="openCV笔记（一）">
 <meta name="twitter:description" content="图像读取、显示及保存使用工具Python3.6库numpy；opencv注意点：  读取的文件名不能是汉字，否则无法读出 指定文件位置时，应用‘\\’,而不是‘\’">
 
     
-    <link rel="alternative" href="/atom.xml" title="苞米造" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="BOMIZO" type="application/atom+xml">
     
     
     <link rel="icon" href="/img/favicon.ico">
@@ -43,11 +43,11 @@
 <div>
 		
 			<div id="imglogo">
-				<a href="/"><img src="/img/logo.png" alt="苞米造" title="苞米造"/></a>
+				<a href="/"><img src="/img/logo.png" alt="BOMIZO" title="BOMIZO"/></a>
 			</div>
 			
 			<div id="textlogo">
-				<h1 class="site-name"><a href="/" title="苞米造">苞米造</a></h1>
+				<h1 class="site-name"><a href="/" title="BOMIZO">BOMIZO</a></h1>
 				<h2 class="blog-motto">Just Enjoy It!</h2>
 			</div>
 			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
@@ -60,14 +60,14 @@
 					
 						<li><a href="/archives">归档</a></li>
 					
-						<li><a href="/about">关于</a></li>
+						<li><a href="/http://about.bomizo.ml">关于</a></li>
 					
 					<li>
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
 						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
-						<input type="hidden" name="q" value="site:yoursite.com">
+						<input type="hidden" name="q" value="site:www.bomizo.ml">
 					</form>
 					
 					</li>
@@ -86,7 +86,7 @@
   </h1>
   <p class="article-author">By
        
-		<a href="/about" title="马峰" target="_blank" itemprop="author">马峰</a>
+		<a href="/about" title="Maf" target="_blank" itemprop="author">Maf</a>
 		
   <p class="article-time">
     <time datetime="2018-02-28T06:11:32.000Z" itemprop="datePublished"> 发表于 2018-02-28</time>
@@ -98,7 +98,7 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像读取、显示及保存"><span class="toc-number">1.</span> <span class="toc-text">图像读取、显示及保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Matplotlib绘图库"><span class="toc-number">2.</span> <span class="toc-text">Matplotlib绘图库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenCV中的绘图函数"><span class="toc-number">3.</span> <span class="toc-text">OpenCV中的绘图函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画线"><span class="toc-number">3.1.</span> <span class="toc-text">1.画线</span></a></li></ol></li></ol>
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像读取、显示及保存"><span class="toc-number">1.</span> <span class="toc-text">图像读取、显示及保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Matplotlib绘图库"><span class="toc-number">2.</span> <span class="toc-text">Matplotlib绘图库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenCV中的绘图函数"><span class="toc-number">3.</span> <span class="toc-text">OpenCV中的绘图函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画线"><span class="toc-number">3.1.</span> <span class="toc-text">1.画线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画矩形"><span class="toc-number">3.2.</span> <span class="toc-text">1.画矩形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画圆"><span class="toc-number">3.3.</span> <span class="toc-text">1.画圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画椭圆"><span class="toc-number">3.4.</span> <span class="toc-text">1.画椭圆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标画笔"><span class="toc-number">4.</span> <span class="toc-text">鼠标画笔</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-双击左键画圆"><span class="toc-number">4.1.</span> <span class="toc-text">1.双击左键画圆</span></a></li></ol></li></ol>
 		
 		</div>
 		
@@ -126,7 +126,13 @@
 <li>安装完成后，可以用python -m pip list查看本机的安装的所有模块，确保matplotlib已经安装成功。</li>
 </ol>
 <p>以下代码可显示图像：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line">from matplotlib import pyplot as plt</span><br><span class="line"></span><br><span class="line">img = cv2.imread(<span class="string">'C:\\Users\\Administrator\\Desktop\\softskillsillo.jpg'</span>,0)</span><br><span class="line">plt.imshow(img, cmap = <span class="string">'gray'</span>, interpolation = <span class="string">'bicubic'</span>)</span><br><span class="line">plt.xticks([]), plt.yticks([])</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure></p>
-<h3 id="OpenCV中的绘图函数"><a href="#OpenCV中的绘图函数" class="headerlink" title="OpenCV中的绘图函数"></a>OpenCV中的绘图函数</h3><h4 id="1-画线"><a href="#1-画线" class="headerlink" title="1.画线"></a>1.画线</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">img = np.zeros((512,512,3), np.uint8)    </span><br><span class="line"><span class="comment"># np.zeros()有两个参数，一个是创建的图片矩阵大小，另一个是数据类型</span></span><br><span class="line"><span class="comment"># 512,512是指图片占像素为512x512，3则是指BGR三种颜色</span></span><br><span class="line"><span class="comment"># uint8就是每种颜色都是0到255</span></span><br><span class="line"></span><br><span class="line">cv2.line(img, (0,0), (260,260), (255,0,0),5)</span><br><span class="line"><span class="comment"># cv2.line有五个参数，图片名称、起点坐标、终点坐标、颜色、线宽(不写默认为1)</span></span><br><span class="line"></span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</span><br><span class="line">cv2.resizeWindow(<span class="string">'image'</span>, 512, 512)</span><br><span class="line">cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">cv2.waitKey(0)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>  
+<h3 id="OpenCV中的绘图函数"><a href="#OpenCV中的绘图函数" class="headerlink" title="OpenCV中的绘图函数"></a>OpenCV中的绘图函数</h3><h4 id="1-画线"><a href="#1-画线" class="headerlink" title="1.画线"></a>1.画线</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">img = np.zeros((512,512,3), np.uint8)    </span><br><span class="line"><span class="comment"># np.zeros()有两个参数，一个是创建的图片矩阵大小，另一个是数据类型</span></span><br><span class="line"><span class="comment"># 512,512是指图片占像素为512x512，3则是指BGR三种颜色</span></span><br><span class="line"><span class="comment"># uint8就是每种颜色都是0到255</span></span><br><span class="line"></span><br><span class="line">cv2.line(img, (0,0), (260,260), (255,0,0),5)</span><br><span class="line"><span class="comment"># cv2.line有五个参数，图片名称、起点坐标、终点坐标、颜色、线宽(不写默认为1)</span></span><br><span class="line"></span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</span><br><span class="line">cv2.resizeWindow(<span class="string">'image'</span>, 512, 512)</span><br><span class="line">cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">cv2.waitKey(0)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h4 id="1-画矩形"><a href="#1-画矩形" class="headerlink" title="1.画矩形"></a>1.画矩形</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">img = np.zeros((512,512,3), np.uint8)    </span><br><span class="line"></span><br><span class="line">cv2.rectangle(img, (25,25), (50,50), (0,255,0),3)</span><br><span class="line"><span class="comment"># cv2.rectangle（矩形）有五个参数，图片名称、左上角顶点坐标、右下角顶点坐标、颜色、线宽(不写默认为1)</span></span><br><span class="line"></span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</span><br><span class="line">cv2.resizeWindow(<span class="string">'image'</span>, 512, 512)</span><br><span class="line">cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">cv2.waitKey(0)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h4 id="1-画圆"><a href="#1-画圆" class="headerlink" title="1.画圆"></a>1.画圆</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">img = np.zeros((512,512,3), np.uint8)    </span><br><span class="line"></span><br><span class="line">cv2.rectangle(img, (25,25), (75,75), (0,255,0), 3)</span><br><span class="line"></span><br><span class="line">cv2.circle(img, (50,50), 25, (0,0,255), -1)</span><br><span class="line"><span class="comment"># cv2.cicle有五个参数，图片名称、圆心坐标、半径、颜色、线宽(不写默认为1，-1为向内填充)</span></span><br><span class="line"></span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</span><br><span class="line">cv2.resizeWindow(<span class="string">'image'</span>, 512, 512)</span><br><span class="line">cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">cv2.waitKey(0)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h4 id="1-画椭圆"><a href="#1-画椭圆" class="headerlink" title="1.画椭圆"></a>1.画椭圆</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">img = np.zeros((512,512,3), np.uint8)    </span><br><span class="line"></span><br><span class="line">cv2.ellipse(img, (100,100), (50,25), 0, 45,180, (255,0,0), -1)</span><br><span class="line"><span class="comment"># cv2.ellipse有八个参数：</span></span><br><span class="line"><span class="comment"># 图片名称、中心坐标、长轴短轴、旋转角度、显示部分、颜色、线宽(不写默认为1，-1为向内填充)</span></span><br><span class="line"><span class="comment"># 显示部分为顺时针显示，0,360为全显。</span></span><br><span class="line"></span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</span><br><span class="line">cv2.resizeWindow(<span class="string">'image'</span>, 512, 512)</span><br><span class="line">cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">cv2.waitKey(0)</span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+<h3 id="鼠标画笔"><a href="#鼠标画笔" class="headerlink" title="鼠标画笔"></a>鼠标画笔</h3><p>函数：cv2.setMouseCallback()</p>
+<h4 id="1-双击左键画圆"><a href="#1-双击左键画圆" class="headerlink" title="1.双击左键画圆"></a>1.双击左键画圆</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line">import numpy as np</span><br><span class="line">import cv2</span><br><span class="line"></span><br><span class="line">def draw_circle(event, x, y, flags, param): <span class="comment"># 定义画圆事件</span></span><br><span class="line">    <span class="keyword">if</span> event == cv2.EVENT_LBUTTONDBLCLK:  <span class="comment"># 若双击左键事件发生，则以双击的点画圆</span></span><br><span class="line">        cv2.circle(img, (x, y), 100, (255, 0, 0), -1)</span><br><span class="line"></span><br><span class="line">img = np.zeros((500, 500, 3), np.uint8)</span><br><span class="line">cv2.namedWindow(<span class="string">'image'</span>, cv2.WINDOW_NORMAL)</span><br><span class="line">cv2.resizeWindow(<span class="string">'image'</span>, 512, 512)</span><br><span class="line">cv2.setMouseCallback(<span class="string">'image'</span>, draw_circle)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (1):</span><br><span class="line">    cv2.imshow(<span class="string">'image'</span>, img)</span><br><span class="line">    <span class="keyword">if</span> cv2.waitKey(1)&amp;0xFF == ord(<span class="string">'q'</span>):</span><br><span class="line">        <span class="built_in">break</span></span><br><span class="line">cv2.destroyAllWindows()</span><br></pre></td></tr></table></figure>
+  
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
@@ -148,7 +154,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://yoursite.com/2018/02/28/openCV笔记/" data-title="openCV笔记（一） | 苞米造" data-tsina="" class="share clearfix">
+	  <div data-url="http://www.bomizo.ml/2018/02/28/openCV笔记/" data-title="openCV笔记（一） | BOMIZO" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -182,7 +188,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像读取、显示及保存"><span class="toc-number">1.</span> <span class="toc-text">图像读取、显示及保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Matplotlib绘图库"><span class="toc-number">2.</span> <span class="toc-text">Matplotlib绘图库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenCV中的绘图函数"><span class="toc-number">3.</span> <span class="toc-text">OpenCV中的绘图函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画线"><span class="toc-number">3.1.</span> <span class="toc-text">1.画线</span></a></li></ol></li></ol>
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像读取、显示及保存"><span class="toc-number">1.</span> <span class="toc-text">图像读取、显示及保存</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Matplotlib绘图库"><span class="toc-number">2.</span> <span class="toc-text">Matplotlib绘图库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OpenCV中的绘图函数"><span class="toc-number">3.</span> <span class="toc-text">OpenCV中的绘图函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画线"><span class="toc-number">3.1.</span> <span class="toc-text">1.画线</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画矩形"><span class="toc-number">3.2.</span> <span class="toc-text">1.画矩形</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画圆"><span class="toc-number">3.3.</span> <span class="toc-text">1.画圆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-画椭圆"><span class="toc-number">3.4.</span> <span class="toc-text">1.画椭圆</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#鼠标画笔"><span class="toc-number">4.</span> <span class="toc-text">鼠标画笔</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-双击左键画圆"><span class="toc-number">4.1.</span> <span class="toc-text">1.双击左键画圆</span></a></li></ol></li></ol>
  
   </div>
 
@@ -217,15 +223,15 @@
 		<ul class="clearfix">
 		
 			
+				<li><a href="/tags/openCV/" title="openCV">openCV<sup>1</sup></a></li>
+			
+		
+			
 				<li><a href="/tags/arduino/" title="arduino">arduino<sup>1</sup></a></li>
 			
 		
 			
 				<li><a href="/tags/blog/" title="blog">blog<sup>1</sup></a></li>
-			
-		
-			
-				<li><a href="/tags/openCV/" title="openCV">openCV<sup>1</sup></a></li>
 			
 		
 		</ul>
@@ -261,13 +267,14 @@
 	
 	
 	<section class="info">
-		<p> Hello ,I&#39;m Pony. <br/>
+		<p> Hello ,I&#39;m Maf. <br/>
 			This is my blog, Just enjoy it.</p>
 	</section>
 	 
 	<div class="social-font" class="clearfix">
 		
 		
+		<a href="https://github.com/fsi270308" target="_blank" class="icon-github" title="github"></a>
 		
 		
 		
@@ -276,18 +283,19 @@
 		
 		
 		
-		<a href="mailto:mf6021635@qq.com" target="_blank" class="icon-email" title="Email Me"></a>
+		
+		<a href="mailto:fsi270308@gmail.com" target="_blank" class="icon-email" title="Email Me"></a>
 		
 	</div>
 			
 		
 
 		<p class="copyright">
-		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/wuchong/jacman" target="_blank" title="Jacman">Jacman</a> © 2018 
+		Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> © 2018 
 		
-		<a href="/about" target="_blank" title="马峰">马峰</a>
+		<a href="/about" target="_blank" title="Maf">Maf</a>
 		
-		
+
 		</p>
 </div>
 </footer>
