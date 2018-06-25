@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>arduino笔记 | BOMIZO</title>
+    <title>openCV笔记（二） | BOMIZO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Maf">
     
 
     
-    <meta name="description" content="声控arduino无人机自动喂食机LiquidCrystal库函数(中文)步进电机的控制">
-<meta name="keywords" content="arduino">
+    <meta name="description" content="图像的基础操作 获取并修改像素值 获取图像属性 图像的ROI 图像通道的拆分和合并">
+<meta name="keywords" content="openCV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="arduino笔记">
-<meta property="og:url" content="http://www.bomizo.ml/2018/02/04/arduino笔记/index.html">
+<meta property="og:title" content="openCV笔记（二）">
+<meta property="og:url" content="http://www.bomizo.ml/2018/05/10/openCV笔记（二）/index.html">
 <meta property="og:site_name" content="BOMIZO">
-<meta property="og:description" content="声控arduino无人机自动喂食机LiquidCrystal库函数(中文)步进电机的控制">
+<meta property="og:description" content="图像的基础操作 获取并修改像素值 获取图像属性 图像的ROI 图像通道的拆分和合并">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-08T06:03:59.000Z">
+<meta property="og:updated_time" content="2018-05-10T08:27:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="arduino笔记">
-<meta name="twitter:description" content="声控arduino无人机自动喂食机LiquidCrystal库函数(中文)步进电机的控制">
+<meta name="twitter:title" content="openCV笔记（二）">
+<meta name="twitter:description" content="图像的基础操作 获取并修改像素值 获取图像属性 图像的ROI 图像通道的拆分和合并">
 
     
     <link rel="alternative" href="/atom.xml" title="BOMIZO" type="application/atom+xml">
@@ -82,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/02/04/arduino笔记/" title="arduino笔记" itemprop="url">arduino笔记</a>
+      <a href="/2018/05/10/openCV笔记（二）/" title="openCV笔记（二）" itemprop="url">openCV笔记（二）</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Maf" target="_blank" itemprop="author">Maf</a>
 		
   <p class="article-time">
-    <time datetime="2018-02-04T06:23:14.000Z" itemprop="datePublished"> 发表于 2018-02-04</time>
+    <time datetime="2018-05-10T07:09:41.000Z" itemprop="datePublished"> 发表于 2018-05-10</time>
     
   </p>
 </header>
@@ -98,11 +98,18 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像的基础操作"><span class="toc-number">1.</span> <span class="toc-text">图像的基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-获取并修改像素值、获取图像属性"><span class="toc-number">1.1.</span> <span class="toc-text">1.获取并修改像素值、获取图像属性</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<p><a href="https://shimo.im/doc/3LHB23glZ5c33xY3/" target="_blank" rel="noopener">声控arduino无人机</a><br><a href="https://shimo.im/docs/ozYugsP1kzgbRH9r/" target="_blank" rel="noopener">自动喂食机</a><br><a href="https://shimo.im/docs/mx6h42XL6P0qQtMe/" target="_blank" rel="noopener">LiquidCrystal库函数(中文)</a><br><a href="https://shimo.im/docs/8Rv0wCJwjD845UQ6/" target="_blank" rel="noopener">步进电机的控制</a><br><a id="more"></a><br><a href="https://shimo.im/docs/BjW4E1U5E2gYB0Ro/" target="_blank" rel="noopener">Arduino RFID读写卡</a></p>
+		<h3 id="图像的基础操作"><a href="#图像的基础操作" class="headerlink" title="图像的基础操作"></a>图像的基础操作</h3><ul>
+<li>获取并修改像素值</li>
+<li>获取图像属性</li>
+<li>图像的ROI</li>
+<li>图像通道的拆分和合并</li>
+</ul>
+<a id="more"></a>
+<h4 id="1-获取并修改像素值、获取图像属性"><a href="#1-获取并修改像素值、获取图像属性" class="headerlink" title="1.获取并修改像素值、获取图像属性"></a>1.获取并修改像素值、获取图像属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">Created on 2018/5/9</span></span><br><span class="line"><span class="string">@author: Maf</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line">import cv2</span><br><span class="line">import numpy as np</span><br><span class="line"><span class="comment"># 读入一幅图像</span></span><br><span class="line">img = cv2.imread(<span class="string">'D:\\1.jpg'</span>)</span><br><span class="line"><span class="comment"># 获取并修改像素值</span></span><br><span class="line"><span class="built_in">print</span> (img.item(10,10,2))</span><br><span class="line">img.itemset((10,10,2),100)</span><br><span class="line"><span class="built_in">print</span> (img.item(10,10,2))</span><br><span class="line"><span class="comment"># img.shape 可以获取图像的形状。他的返回值是一个包含行数，列数通道数的元组。</span></span><br><span class="line"><span class="built_in">print</span> (img.shape)</span><br><span class="line"><span class="comment"># img.size 可以返回图像的像素数目</span></span><br><span class="line"><span class="built_in">print</span> (img.size)</span><br><span class="line"><span class="comment"># img.dtype 返回的是图像的数据类型.</span></span><br><span class="line"><span class="built_in">print</span> (img.dtype)</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -110,13 +117,13 @@
 
 <div class="article-categories">
   <span></span>
-  <a class="article-category-link" href="/categories/arduino笔记/">arduino笔记</a>
+  <a class="article-category-link" href="/categories/openCV笔记/">openCV笔记</a>
 </div>
 
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/arduino/">arduino</a>
+  <span></span> <a href="/tags/openCV/">openCV</a>
   </div>
 
 </div>
@@ -125,7 +132,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.bomizo.ml/2018/02/04/arduino笔记/" data-title="arduino笔记 | BOMIZO" data-tsina="" class="share clearfix">
+	  <div data-url="http://www.bomizo.ml/2018/05/10/openCV笔记（二）/" data-title="openCV笔记（二） | BOMIZO" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -139,18 +146,18 @@
 <nav class="article-nav clearfix">
  
  <div class="prev" >
- <a href="/2018/02/28/openCV笔记（一）/" title="openCV笔记（一）">
+ <a href="/2018/06/25/浅谈中职学校新型模块化机房建设/" title="浅谈中职学校新型模块化机房建设">
   <strong>上一篇：</strong><br/>
   <span>
-  openCV笔记（一）</span>
+  浅谈中职学校新型模块化机房建设</span>
 </a>
 </div>
 
 
 <div class="next">
-<a href="/2018/01/20/开始我的博客之旅/"  title="开始我的博客之旅">
+<a href="/2018/02/28/openCV笔记（一）/"  title="openCV笔记（一）">
  <strong>下一篇：</strong><br/> 
- <span>开始我的博客之旅
+ <span>openCV笔记（一）
 </span>
 </a>
 </div>
@@ -167,7 +174,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像的基础操作"><span class="toc-number">1.</span> <span class="toc-text">图像的基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-获取并修改像素值、获取图像属性"><span class="toc-number">1.1.</span> <span class="toc-text">1.获取并修改像素值、获取图像属性</span></a></li></ol></li></ol>
  
   </div>
 
