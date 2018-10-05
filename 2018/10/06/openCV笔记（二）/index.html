@@ -4,25 +4,25 @@
 <head>
   <meta charset="UTF-8">
   
-    <title>怎样成为一个上进的人 | BOMIZO</title>
+    <title>openCV笔记（二） | BOMIZO</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="Maf">
     
 
     
-    <meta name="description" content="这个世界娇惯我们的人越来越多，必须逼迫自己上进。“别人家的孩子”那么优秀，也是外部力量逼迫出来的。 这里说的逼迫其实就是一种强制自己、约束自己、激励自己。  设计“上进”模型 认真设计环境">
-<meta name="keywords" content="知识就是力量">
+    <meta name="description" content="图像的基础操作 获取并修改像素值 获取图像属性 图像的ROI 图像通道的拆分和合并">
+<meta name="keywords" content="openCV">
 <meta property="og:type" content="article">
-<meta property="og:title" content="怎样成为一个上进的人">
-<meta property="og:url" content="http://www.bomizo.ml/2018/09/05/怎样成为一个上进的人/index.html">
+<meta property="og:title" content="openCV笔记（二）">
+<meta property="og:url" content="http://www.bomizo.ml/2018/10/06/openCV笔记（二）/index.html">
 <meta property="og:site_name" content="BOMIZO">
-<meta property="og:description" content="这个世界娇惯我们的人越来越多，必须逼迫自己上进。“别人家的孩子”那么优秀，也是外部力量逼迫出来的。 这里说的逼迫其实就是一种强制自己、约束自己、激励自己。  设计“上进”模型 认真设计环境">
+<meta property="og:description" content="图像的基础操作 获取并修改像素值 获取图像属性 图像的ROI 图像通道的拆分和合并">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-09-05T14:55:40.053Z">
+<meta property="og:updated_time" content="2018-05-10T08:27:30.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="怎样成为一个上进的人">
-<meta name="twitter:description" content="这个世界娇惯我们的人越来越多，必须逼迫自己上进。“别人家的孩子”那么优秀，也是外部力量逼迫出来的。 这里说的逼迫其实就是一种强制自己、约束自己、激励自己。  设计“上进”模型 认真设计环境">
+<meta name="twitter:title" content="openCV笔记（二）">
+<meta name="twitter:description" content="图像的基础操作 获取并修改像素值 获取图像属性 图像的ROI 图像通道的拆分和合并">
 
     
     <link rel="alternative" href="/atom.xml" title="BOMIZO" type="application/atom+xml">
@@ -82,14 +82,14 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2018/09/05/怎样成为一个上进的人/" title="怎样成为一个上进的人" itemprop="url">怎样成为一个上进的人</a>
+      <a href="/2018/10/06/openCV笔记（二）/" title="openCV笔记（二）" itemprop="url">openCV笔记（二）</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="Maf" target="_blank" itemprop="author">Maf</a>
 		
   <p class="article-time">
-    <time datetime="2018-09-05T14:05:10.354Z" itemprop="datePublished"> 发表于 2018-09-05</time>
+    <time datetime="2018-10-05T23:36:08.448Z" itemprop="datePublished"> 发表于 2018-10-06</time>
     
   </p>
 </header>
@@ -98,51 +98,32 @@
 		<div id="toc" class="toc-article">
 			<strong class="toc-title">文章目录</strong>
 		
-			
+			<ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像的基础操作"><span class="toc-number">1.</span> <span class="toc-text">图像的基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-获取并修改像素值、获取图像属性"><span class="toc-number">1.1.</span> <span class="toc-text">1.获取并修改像素值、获取图像属性</span></a></li></ol></li></ol>
 		
 		</div>
 		
-		<ul>
-<li>这个世界娇惯我们的人越来越多，必须逼迫自己上进。<pre><code>“别人家的孩子”那么优秀，也是外部力量逼迫出来的。
-这里说的逼迫其实就是一种强制自己、约束自己、激励自己。
-</code></pre></li>
-<li>设计“上进”模型<ul>
-<li>认真设计环境<a id="more"></a>
-<pre><code>有时候我们被身边的环境所影响，颓废的气息自然也会影响着成为颓废的你，如果身处的
-环境氛围都是积极、奋发向上的，我想你自己也会自主的励志起来.
-想上进，尽可能选择朝阳行业
-* 因为学习氛围更好，聪明人更多一点
-* 拥抱建设性心智模式
-  * 傻瓜指数，年限，时间越短越好，
-  * 朋友指数，人数，优秀的朋友越多，身处的环境越好.
-与一些聪明能干的朋友在一起合作共事，所谓“近朱者赤”你也会高速成长.
-</code></pre></li>
-<li>需求外部监督,绑架自己<pre><code>当自己控制不住自己的时候，我们需要一些外在的力量来是自己保持理智，会一步步的理
-智，自控，更好的成长
-</code></pre></li>
-<li>获得不确定反馈<pre><code>踏入未知的领域，存在很多的不确定性，可能会捶败你，但如果是很惊喜，那种感觉会胜
-过所有的捶败！
-</code></pre></li>
-<li>选择一条长远的职业阶梯<pre><code>心流：一种将个人精力完全投注在某种活动上的状态，做一件事突然忘了时间，沉浸其中
-特别喜悦。
-给自己设计一套上进机制，关键要能控制好技能挑战比。把大目标切碎，变成一层层的阶
-梯，拾级而上，目标清晰。
-</code></pre></li>
+		<h3 id="图像的基础操作"><a href="#图像的基础操作" class="headerlink" title="图像的基础操作"></a>图像的基础操作</h3><ul>
+<li>获取并修改像素值</li>
+<li>获取图像属性</li>
+<li>图像的ROI</li>
+<li>图像通道的拆分和合并</li>
 </ul>
-</li>
-<li>对于想上进的人来说，这是最友好的时代。<pre><code>我不需要到达每个行业的顶峰，最需要平凡的努力着每天的所需。
-上进心=方向+行动+坚持+反省
-</code></pre></li>
-</ul>
+<a id="more"></a>
+<h4 id="1-获取并修改像素值、获取图像属性"><a href="#1-获取并修改像素值、获取图像属性" class="headerlink" title="1.获取并修改像素值、获取图像属性"></a>1.获取并修改像素值、获取图像属性</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line"></span><br><span class="line"><span class="string">""</span><span class="string">"</span></span><br><span class="line"><span class="string">Created on 2018/5/9</span></span><br><span class="line"><span class="string">@author: Maf</span></span><br><span class="line"><span class="string">"</span><span class="string">""</span></span><br><span class="line"></span><br><span class="line">import cv2</span><br><span class="line">import numpy as np</span><br><span class="line"><span class="comment"># 读入一幅图像</span></span><br><span class="line">img = cv2.imread(<span class="string">'D:\\1.jpg'</span>)</span><br><span class="line"><span class="comment"># 获取并修改像素值</span></span><br><span class="line"><span class="built_in">print</span> (img.item(10,10,2))</span><br><span class="line">img.itemset((10,10,2),100)</span><br><span class="line"><span class="built_in">print</span> (img.item(10,10,2))</span><br><span class="line"><span class="comment"># img.shape 可以获取图像的形状。他的返回值是一个包含行数，列数通道数的元组。</span></span><br><span class="line"><span class="built_in">print</span> (img.shape)</span><br><span class="line"><span class="comment"># img.size 可以返回图像的像素数目</span></span><br><span class="line"><span class="built_in">print</span> (img.size)</span><br><span class="line"><span class="comment"># img.dtype 返回的是图像的数据类型.</span></span><br><span class="line"><span class="built_in">print</span> (img.dtype)</span><br></pre></td></tr></table></figure>
   
 	</div>
 		<footer class="article-footer clearfix">
 <div class="article-catetags">
 
+<div class="article-categories">
+  <span></span>
+  <a class="article-category-link" href="/categories/openCV笔记/">openCV笔记</a>
+</div>
+
 
   <div class="article-tags">
   
-  <span></span> <a href="/tags/知识就是力量/">知识就是力量</a>
+  <span></span> <a href="/tags/openCV/">openCV</a>
   </div>
 
 </div>
@@ -151,7 +132,7 @@
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://www.bomizo.ml/2018/09/05/怎样成为一个上进的人/" data-title="怎样成为一个上进的人 | BOMIZO" data-tsina="" class="share clearfix">
+	  <div data-url="http://www.bomizo.ml/2018/10/06/openCV笔记（二）/" data-title="openCV笔记（二） | BOMIZO" data-tsina="" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -164,11 +145,19 @@
 	
 <nav class="article-nav clearfix">
  
+ <div class="prev" >
+ <a href="/2018/10/06/怎样成为一个上进的人/" title="怎样成为一个上进的人">
+  <strong>上一篇：</strong><br/>
+  <span>
+  怎样成为一个上进的人</span>
+</a>
+</div>
+
 
 <div class="next">
-<a href="/2018/06/25/浅谈中职学校新型模块化机房建设/"  title="浅谈中职学校新型模块化机房建设">
+<a href="/2018/10/06/arduino笔记/"  title="arduino笔记">
  <strong>下一篇：</strong><br/> 
- <span>浅谈中职学校新型模块化机房建设
+ <span>arduino笔记
 </span>
 </a>
 </div>
@@ -185,7 +174,7 @@
   <div id="toc" class="toc-aside">
   <strong class="toc-title">文章目录</strong>
  
- 
+ <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#图像的基础操作"><span class="toc-number">1.</span> <span class="toc-text">图像的基础操作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-获取并修改像素值、获取图像属性"><span class="toc-number">1.1.</span> <span class="toc-text">1.获取并修改像素值、获取图像属性</span></a></li></ol></li></ol>
  
   </div>
 
